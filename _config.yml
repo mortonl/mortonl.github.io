@@ -14,9 +14,9 @@ timezone: Europe/London
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Luke Morton's Portfolio # the main title
+title: Luke Morton # the main title
 
-tagline: Senior Technical Architect | Portfolio & Blog # it will display as the subtitle
+tagline: Senior Technical Architect # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Portfolio and blog of Luke Morton, Senior Technical Architect in eCommerce at Evri.
@@ -91,7 +91,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: dark # [light | dark]
+theme_mode: # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
@@ -171,6 +171,14 @@ kramdown:
       start_line: 1
 
 collections:
+  blogs:
+    output: true
+    permalink: /:collection/:name/
+    sort_by: order
+  cv_pages:
+    output: true
+    permalink: /:collection/:name/
+    sort_by: order
   tabs:
     output: true
     sort_by: order

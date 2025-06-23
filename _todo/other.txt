@@ -1,0 +1,35 @@
+---
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 12
+---
+### 📚 Case Study: Enabling Agility Through Reuse
+One of my most impactful projects was the **design of the Product Catalogue, Quoting, and Order Fulfillment system** at Evri. This architecture was foundational for multiple initiatives:
+
+- Originally built to support new send flow features like **Evri Video** and **service speed differentiation**.
+- Later reused in the **Post Office Reseller** and **Evri Website International** projects, saving **~6 months of development time** by leveraging existing services and databases.
+- Demonstrated the power of **modular, reusable design** and **holistic architectural thinking**.
+
+This case exemplifies how thoughtful architecture can **accelerate delivery**, **reduce costs**, and **enable strategic reuse** across business domains.
+
+---
+
+### 🧩 What I Tackle at Evri
+My work spans a wide range of architectural responsibilities, including:
+
+- **Creating and reviewing LLDs** for features like international quoting, invoice exclusions, and routing APIs.
+- **Investigating and planning for future systems**, such as OAuth integrations, carrier management APIs, and premium delivery networks.
+- **Driving architectural hygiene**, including component deprecation, drift detection, and tech debt remediation.
+- **Leading Proof of Concepts (PoCs)** for tools like Moderne, Applitools, and OpenRewrite automation.
+- **Improving developer experience**, from GitLab access models to Backstage enhancements and pipeline migrations.
+- **Drift detection and remediation**: Implementing automated checks and enforcement for infrastructure drift.
+- **Component deprecation processes**: Defining and piloting structured approaches to safely retire outdated components.
+- **Weekly maintenance automation**: Proactively scheduling and rotating maintenance tasks to ensure system hygiene.
+- **PCI DSS compliance**: Ensuring critical vulnerabilities are addressed within SLA, especially for payment-related systems.
+- **DevSecOps mindset**: Embedding security into architecture and delivery, aligning with confidentiality, integrity, and availability principles.
+- **Onboarding and documentation**: Contributing to onboarding guides, architectural standards, and documentation strategies.
+- **Backstage improvements**: Enhancing internal developer portals and metadata syncs to improve discoverability and governance.
+- **Tech debt triage and hygiene**: Defining what constitutes tech debt, advocating for its visibility, and aligning remediation with strategic goals.
+- **Architecture board processes**: Contributing to the governance of architectural decisions and traceability of requirements.
+
+I maintain a living backlog of architectural tasks, ideas, and investigations to ensure we’re always improving—not just delivering.

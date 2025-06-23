@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-brain
-order: 12
+order: 2
 ---
 
 # Architectural Philosophy & Practices

@@ -1,5 +1,4 @@
 <!-- The Side Bar -->
-
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
     <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
@@ -18,30 +17,61 @@
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
+      <li class="nav-divider"></li>
       <!-- home -->
-      <li class="nav-item{% if page.layout == 'home' %}{{ " active " }}{% endif %}">
+      <li class="nav-item{% if page.layout == 'home' %} active{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
-      <li class="nav-item{% if page.title == 'Blog' or page.collection == 'posts' %}{{ " active " }}{% endif %}">
+
+      <li class="nav-divider"></li>
+
+      <!-- CV-related pages from _cv_pages collection -->
+      {% if site.cv_pages %}
+        {% for csv_page in site.cv_pages %}
+          <li class="nav-item{% if csv_page.url == page.url %} active{% endif %}">
+            <a href="{{ csv_page.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ csv_page.icon }}"></i>
+              <span>{{ csv_page.title | upcase }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      <li class="nav-divider"></li>
+
+      <!-- Blog main link -->
+      <li class="nav-item{% if page.title == 'Blog' or page.collection == 'posts' %} active{% endif %}">
         <a href="{{ site.paginate_path | replace: '/:num', '' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-pen ml-xl-3 mr-xl-3 unloaded"></i>
           <span>BLOG</span>
         </a>
       </li>
-      <!-- the real tabs -->
+
+      <!-- Blog-related pages from _blogs collection -->
+      {% if site.blogs %}
+        {% for blog_page in site.blogs %}
+          <li class="nav-item{% if blog_page.url == page.url %} active{% endif %}">
+            <a href="{{ blog_page.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ blog_page.icon }}"></i>
+              <span>{{ blog_page.title | upcase }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      <li class="nav-divider"></li>
+
+      <!-- Other tabs as before -->
       {% for tab in site.tabs %}
-        <li class="nav-item{% if tab.url == page.url %}{{ " active " }}{% endif %}">
+        <li class="nav-item{% if tab.url == page.url %} active{% endif %}">
           <a href="{{ tab.url | relative_url }}" class="nav-link">
             <i class="fa-fw {{ tab.icon }}"></i>
-            {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-
-            <span>{{ site.data.locales[include.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+            <span>{{ tab.title | upcase }}</span>
           </a>
         </li>
-        <!-- .nav-item -->
       {% endfor %}
     </ul>
   </nav>
