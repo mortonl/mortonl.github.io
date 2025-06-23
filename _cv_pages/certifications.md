@@ -1,3 +1,4 @@
+
 ---
 title: "Certifications"
 layout: page
@@ -5,7 +6,16 @@ icon: fas fa-certificate
 order: 8
 ---
 
+
 # Certifications
 
-- JQL for Admins
-- Confluence Fundamentals
+[![Jira JQL for Admins](https://cdn.exceedlms.com/uploads/certifications/badges/35397/large/uni-completioncertificate-badge.png?1742869147&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZXhjZWVkbG1zLmNvbS91cGxvYWRzL2NlcnRpZmljYXRpb25zL2JhZGdlcy8zNTM5Ny9sYXJnZS91bmktY29tcGxldGlvbmNlcnRpZmljYXRlLWJhZGdlLnBuZz8xNzQyODY5MTQ3IiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzUwNzY0MzIxfX19XX0_&Signature=A9r-D7RtzTQ~ctBYnltfdSQKLQxzJgtT811HKACFkxe3KQpUYZrO6umfBoC5mqQjj2bvhWi1QKoRjBjsMhyxfaNUIlDpCHJur48ktOrBTsJOckVmXBOks2v6l1ifb274K4tb-HZDCPdjN129~i1H24HeuRKgjNn6NTdT9xnp2yoMdmK81NnObVvW47lf2pPHw1NQMAdYhGp4SNOO6XV2YS31tLEEXBNZFk7NLANv5wvurtyHUBHmDlgcLgwxp6I55VJ6aNDHzZUf1Sk8EYVyctOPIX4izZQ4otbxb61gFZr3krYE0sWZROtJTo9FBoHk4yREizki7lHyF1D8niEH3g__&Key-Pair-Id=APKAJINUZDMKZJI5I6DA)](https://university.atlassian.com/student/award/f3jfPHnycUwLCfi1KnEVPGWF)
+[![Confluence Fundamentals](https://cdn.exceedlms.com/uploads/certifications/badges/28811/large/uni-credential-emblem-jirafundamentals__281_29.png?1625167569&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZXhjZWVkbG1zLmNvbS91cGxvYWRzL2NlcnRpZmljYXRpb25zL2JhZGdlcy8yODgxMS9sYXJnZS91bmktY3JlZGVudGlhbC1lbWJsZW0tamlyYWZ1bmRhbWVudGFsc19fMjgxXzI5LnBuZz8xNjI1MTY3NTY5IiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzUwNzU4MDc5fX19XX0_&Signature=GMNCoQVNXpGQXNI7QQp6VUcTYW93eYFNL3083AHVQ6c0Mjr8ZAIhhRVkcI4pvTj4XWIEjmidPzQTDX4-Ai4uCbvpeLeth9iqnU2Mrf~rJYm4wTn2JWqQ2-ki5mEVTX6ppwjTCCVztO~2FNHhyZs3UmS64zC~92DSbvDO51tItVQocMYkO8ZCpbiUz6PoAQ15v-reHU6s6kIYvkQjALpNHt28Jejb9zsIpWt7ZWvH5mON3XuK3cUQzAkzG1ZT1GSMPkxtoiCayRn4ft~30FJfppj1APTnCXo4Laezr85-xxoeQHJ~4MQznxOUxpwEt7DIg40tCsCrQKhCKB~RHuoLIQ__&Key-Pair-Id=APKAJINUZDMKZJI5I6DA)](https://university.atlassian.com/student/award/zjVdvocwnjRX4wADVyKmvsXg)
+[![Certified ScrumMaster®](https://bcert.me/bc/html/img/badges/generated/expired/badge-7227.png)](https://bcert.me/sjrwjcfti)
+
+
+# In Progress Certifications
+
+
+- AWS Certified Solutions Architect - Associate / Professional
+- 
