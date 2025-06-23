@@ -1,11 +1,9 @@
-
 ---
 title: "Certifications"
 layout: page
 icon: fas fa-certificate
 order: 8
 ---
-
 
 # Certifications
 
@@ -18,4 +16,3 @@ order: 8
 
 
 - AWS Certified Solutions Architect - Associate / Professional
-- 
