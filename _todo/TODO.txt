@@ -1,6 +1,9 @@
-- travel page / outside of work
 - hobbies
+  - Finish other pages
+  - travel cities and countries should be dynamic
+  - travel photos?
 - add desired certifications i am pursuing
+- collapsing menu sections
 - better format cv pages such as experience page with line breaks etc
 - images, maps etc.
 - blog post ideas:
