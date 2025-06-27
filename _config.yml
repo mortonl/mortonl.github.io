@@ -179,6 +179,10 @@ collections:
     output: true
     permalink: /:collection/:name/
     sort_by: order
+  hobbies:
+    output: true
+    permalink: /:collection/:name/
+    sort_by: order
   tabs:
     output: true
     sort_by: order
