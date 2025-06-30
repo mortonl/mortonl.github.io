@@ -13,15 +13,77 @@
 
 /* append your custom style below */
 
+/* Navigation dividers - horizontal lines that separate nav sections */
 .nav-divider {
-  // display: block;
   width: 100%;
   border: none;
-  border-top: 1px solid var(--main-border-color);
-  margin: 1rem 0;
-  // opacity: 0.5;
-  // margin: 0.5rem 1rem;
-  // height: 0;
-  // list-style: none;
-  pointer-events: none;
+  border-top: 1px solid var(--main-border-color); // Uses theme's border color
+  margin: 1rem 0; // Vertical spacing around dividers
+  pointer-events: none; // Prevents clicking on dividers
 }
+
+/* Essential styles for Bootstrap collapse navigation */
+
+/* Make buttons look identical to nav-links */
+.nav-item button.nav-link {
+  border: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem; // Match nav-link text size
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0.5rem 0.25rem 0.5rem 0.5rem; // Reduced right padding for chevron space
+  border-radius: 0.25rem;
+  position: relative; // For absolute positioning of chevron
+  
+  &:hover {
+    color: inherit;
+    background-color: var(--sidebar-hover-bg);
+  }
+  
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  // Match icon styling from regular nav-links
+  i.fa-fw {
+    font-size: 95%;
+    opacity: .8;
+    margin-right: 1.5rem;
+  }
+  
+  // Text styling to match nav-links
+  span {
+    font-size: 0.9rem;
+    opacity: .8;
+  }
+  
+  // Position chevron at far right
+  .fa-chevron-right {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+  }
+}
+
+/* Chevron rotation - Bootstrap doesn't handle this automatically */
+[data-bs-toggle="collapse"] .fa-chevron-right {
+  transition: transform 0.2s ease;
+
+  &:not(.collapsed) {
+    transform: rotate(90deg);
+  }
+}
+
+/* Reduce padding to prevent text wrapping in narrow sidebar */
+.nav-item .nav-link {
+  padding-left: 0.5rem;
+  padding-right: 0.25rem; // Minimal right padding
+}
+
+

@@ -1,5 +1,7 @@
 ---
 title: "Curriculum Vitae"
+collection: cv_pages
+collection_homepage: true
 layout: page
 icon: fas fa-user-tie
 order: 4

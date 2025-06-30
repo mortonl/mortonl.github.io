@@ -28,50 +28,127 @@
 
       <li class="nav-divider"></li>
 
-      <!-- CV-related pages from _cv_pages collection -->
+      <!-- CV Collection -->
       {% if site.cv_pages %}
-        {% for csv_page in site.cv_pages %}
-          <li class="nav-item{% if csv_page.url == page.url %} active{% endif %}">
-            <a href="{{ csv_page.url | relative_url }}" class="nav-link">
-              <i class="fa-fw {{ csv_page.icon }}"></i>
-              <span>{{ csv_page.title | upcase }}</span>
-            </a>
+        {% assign cv_homepage = site.cv_pages | where: "collection_homepage", true | first %}
+        {% if cv_homepage %}
+          <li class="nav-item">
+            <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#cv_pages-items">
+              <span><i class="fa-fw {{ cv_homepage.icon }}"></i> {{ cv_homepage.title | upcase }}</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </li>
-        {% endfor %}
+          <div class="collapse{% if page.collection == 'cv_pages' %} show{% endif %}" id="cv_pages-items">
+            <ul class="nav flex-column ms-3">
+              <li class="nav-item{% if cv_homepage.url == page.url %} active{% endif %}">
+                <a href="{{ cv_homepage.url | relative_url }}" class="nav-link">
+                  <i class="fa-fw {{ cv_homepage.icon }}"></i>
+                  <span>{{ cv_homepage.title | upcase }}</span>
+                </a>
+              </li>
+              {% for cv_page in site.cv_pages %}
+                {% unless cv_page.collection_homepage %}
+                  <li class="nav-item{% if cv_page.url == page.url %} active{% endif %}">
+                    <a href="{{ cv_page.url | relative_url }}" class="nav-link">
+                      <i class="fa-fw {{ cv_page.icon }}"></i>
+                      <span>{{ cv_page.title | upcase }}</span>
+                    </a>
+                  </li>
+                {% endunless %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          {% for cv_page in site.cv_pages %}
+            <li class="nav-item{% if cv_page.url == page.url %} active{% endif %}">
+              <a href="{{ cv_page.url | relative_url }}" class="nav-link">
+                <i class="fa-fw {{ cv_page.icon }}"></i>
+                <span>{{ cv_page.title | upcase }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
       {% endif %}
 
       <li class="nav-divider"></li>
 
-      <!-- Blog main link -->
-      <li class="nav-item{% if page.title == 'Blog' or page.collection == 'posts' %} active{% endif %}">
-        <a href="{{ site.paginate_path | replace: '/:num', '' | relative_url }}" class="nav-link">
-          <i class="fa-fw fas fa-pen ml-xl-3 mr-xl-3 unloaded"></i>
-          <span>BLOG</span>
-        </a>
+      <!-- Blog Collection -->
+      <li class="nav-item">
+        <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#blog-items">
+          <span><i class="fa-fw fas fa-pen"></i> BLOG</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </li>
-
-      <!-- Blog-related pages from _blogs collection -->
-      {% if site.blogs %}
-        {% for blog_page in site.blogs %}
-          <li class="nav-item{% if blog_page.url == page.url %} active{% endif %}">
-            <a href="{{ blog_page.url | relative_url }}" class="nav-link">
-              <i class="fa-fw {{ blog_page.icon }}"></i>
-              <span>{{ blog_page.title | upcase }}</span>
+      <div class="collapse{% if page.collection == 'posts' or page.url == '/blog/' %} show{% endif %}" id="blog-items">
+        <ul class="nav flex-column ms-3">
+          <li class="nav-item{% if page.url == '/blog/' %} active{% endif %}">
+            <a href="{{ site.paginate_path | replace: '/:num', '' | relative_url }}" class="nav-link">
+              <i class="fa-fw fas fa-pen"></i>
+              <span>BLOG</span>
             </a>
           </li>
-        {% endfor %}
+          {% if site.blogs %}
+            {% for blog_page in site.blogs %}
+              {% unless blog_page.collection_homepage %}
+                <li class="nav-item{% if blog_page.url == page.url %} active{% endif %}">
+                  <a href="{{ blog_page.url | relative_url }}" class="nav-link">
+                    <i class="fa-fw {{ blog_page.icon }}"></i>
+                    <span>{{ blog_page.title | upcase }}</span>
+                  </a>
+                </li>
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+
+      <li class="nav-divider"></li>
+
+      <!-- Hobbies Collection -->
+      {% if site.hobbies %}
+        {% assign hobbies_tab = site.tabs | where: "title", "Hobbies & Interests" | first %}
+        {% if hobbies_tab %}
+          <li class="nav-item">
+            <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#hobbies-items">
+              <span><i class="fa-fw {{ hobbies_tab.icon }}"></i> {{ hobbies_tab.title | upcase }}</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </li>
+          <div class="collapse{% if page.collection == 'hobbies' or page.url == hobbies_tab.url %} show{% endif %}" id="hobbies-items">
+            <ul class="nav flex-column ms-3">
+              <li class="nav-item{% if page.url == hobbies_tab.url %} active{% endif %}">
+                <a href="{{ hobbies_tab.url | relative_url }}" class="nav-link">
+                  <i class="fa-fw {{ hobbies_tab.icon }}"></i>
+                  <span>{{ hobbies_tab.title | upcase }}</span>
+                </a>
+              </li>
+              {% for hobby_page in site.hobbies %}
+                {% unless hobby_page.collection_homepage %}
+                  <li class="nav-item{% if hobby_page.url == page.url %} active{% endif %}">
+                    <a href="{{ hobby_page.url | relative_url }}" class="nav-link">
+                      <i class="fa-fw {{ hobby_page.icon }}"></i>
+                      <span>{{ hobby_page.title | upcase }}</span>
+                    </a>
+                  </li>
+                {% endunless %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
       {% endif %}
 
       <li class="nav-divider"></li>
 
-      <!-- Other tabs as before -->
+      <!-- Other tabs -->
       {% for tab in site.tabs %}
-        <li class="nav-item{% if tab.url == page.url %} active{% endif %}">
-          <a href="{{ tab.url | relative_url }}" class="nav-link">
-            <i class="fa-fw {{ tab.icon }}"></i>
-            <span>{{ tab.title | upcase }}</span>
-          </a>
-        </li>
+        {% unless tab.title == 'Hobbies & Interests' %}
+          <li class="nav-item{% if tab.url == page.url %} active{% endif %}">
+            <a href="{{ tab.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ tab.icon }}"></i>
+              <span>{{ tab.title | upcase }}</span>
+            </a>
+          </li>
+        {% endunless %}
       {% endfor %}
     </ul>
   </nav>
@@ -131,3 +208,5 @@
   <!-- .sidebar-bottom -->
 </aside>
 <!-- #sidebar -->
+
+
