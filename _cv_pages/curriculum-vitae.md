@@ -23,6 +23,6 @@ I am an experienced software craftsman specialising in the design of cloud-based
 - [Professional Experience](/cv_pages/experience/) - Detailed work history and achievements
 - [Skills](/cv_pages/skills/) - Technical skills and competencies
 - [Education](/cv_pages/education/) - Academic background and qualifications
-- [Certifications](/cv_pages/certifications/) - Professional certifications and badges
+- [Certifications & Training](/cv_pages/certifications-training/) - Professional certifications and training courses
 - [Volunteering](/cv_pages/volunteering/) - Community involvement and mentoring
 - [Honors & Awards](/cv_pages/honors-awards/) - Recognition and achievements
