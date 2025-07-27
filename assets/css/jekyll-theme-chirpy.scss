@@ -86,4 +86,14 @@
   padding-right: 0.25rem; // Minimal right padding
 }
 
+/* Fix Bootstrap card backgrounds to match theme */
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--main-border-color);
+  
+  .card-text {
+    color: var(--text-color);
+  }
+}
+
 

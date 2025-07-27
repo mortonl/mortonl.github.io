@@ -4,17 +4,16 @@ layout: page
 icon: fas fa-certificate
 order: 8
 ---
----
 
 <div class="cert-card">
-  <img src="https://cdn.exceedlms.com/uploads/certifications/badges/35397/large/uni-completioncertificate-badge.png?1742869147&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZXhjZWVkbG1zLmNvbS91cGxvYWRzL2NlcnRpZmljYXRpb25zL2JhZGdlcy8zNTM5Ny9sYXJnZS91bmktY29tcGxldGlvbmNlcnRpZmljYXRlLWJhZGdlLnBuZz8xNzQyODY5MTQ3IiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzUyMTU0NjE2fX19XX0_&Signature=Tmn2JDxLpDant-sDvlh6nN6dLe9uOf0oa3vIckixrG87JD0BDWQE6iOVI9u6zTh-PB0WoIil15b3~dpoAjEFPYs0YdG4GaM1dm3VVGvB5mni6YLyIVGw8aNf4BNp8I8GYagTL0qE6i-A6xzC3GUiC6hvlLAsHuLUf7SUShl2btDIlAyAOTc1~0ObSBy6zGhOED6dr0vWyWEfSsmKctAAXoOf0CNDgQ6R7qC-oSbyFKSOLTt-5kgsXuFMC5J8Ua6CM3hM~mkhkfwijQH8EYO0rVyLApBRzDld2yV2Fm2OJNm9btxtO36JAXJelcrO506IcIld8SCMOpC5P9V342Yqhw__&Key-Pair-Id=APKAJINUZDMKZJI5I6DA" alt="Jira JQL for Admins" width="100"/>
+  <img src="/assets/images/certification-badges/uni-credential-emblem-jirafundamentals__281_29.png" alt="Jira JQL for Admins" width="100"/>
   <p><strong><a href="https://university.atlassian.com/student/award/f3jfPHnycUwLCfi1KnEVPGWF" target="_blank">Jira JQL for Admins</a></strong><br/>Awarded by Atlassian University for completing JQL fundamentals for administrators.</p>
 </div>
 
 <hr/>
 
 <div class="cert-card">
-  <img src="https://cdn.exceedlms.com/uploads/certifications/badges/28811/large/uni-credential-emblem-jirafundamentals__281_29.png?1625167569&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZXhjZWVkbG1zLmNvbS91cGxvYWRzL2NlcnRpZmljYXRpb25zL2JhZGdlcy8yODgxMS9sYXJnZS91bmktY3JlZGVudGlhbC1lbWJsZW0tamlyYWZ1bmRhbWVudGFsc19fMjgxXzI5LnBuZz8xNjI1MTY3NTY5IiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzUyMTQxODQxfX19XX0_&Signature=ay5Ah2Cgt~inT0z0o1d3z1gt6shbjoFxxEma9dMluJOBWstHOdV4AOnd4QFLeE7vXgG-26PtdJgvVNae3IM4bPUwCkQg5sxIAUJorH8FERKUzkxgjSAG5Zu64-TzloyBS9ZAX0K-6EcTKBu6f91PMNEFXebWcFeiz1fxVFTrnrfKuHS8wc-kmbH65K1d3CruN1OlgNYIF2wATnrd2XEt1AM0B6xCgrFecS2UpjmQA7jBmf3Yx2sJg8BxzpXIKJwWJOL-PygFEmgqdQTTVNekzHCVd~DUS2arFCMyTmDrvMwh7IY~Vv~ZIFOJ4IOatiyJUnwwNNG6mqy1zoEGN2uUEA__&Key-Pair-Id=APKAJINUZDMKZJI5I6DA" alt="Confluence Fundamentals" width="100"/>
+  <img src="/assets/images/certification-badges/uni-completioncertificate-badge.png" alt="Confluence Fundamentals" width="100"/>
   <p><strong><a href="https://university.atlassian.com/student/award/zjVdvocwnjRX4wADVyKmvsXg" target="_blank">Confluence Fundamentals</a></strong><br/>Credential for foundational knowledge of Confluence usage, structure, and best practices.</p>
 </div>
 
@@ -27,24 +26,28 @@ order: 8
 
 ---
 
-## Training Courses
+## Training Certificates
 
----
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <img src="/assets/images/training-certificates/Architecting on AWS - AWS Training & Certification - Certificate of Completion.png" alt="Architecting on AWS" class="card-img-top mb-3">
+        <h5 class="card-title"><a href="https://www.aws.training/Transcript/CompletionCertificateHtml?transcriptid=DbH2DRTA7UmhJJGwz_OrTA2" target="_blank">Architecting on AWS</a></h5>
+        <p class="card-text"><small class="text-muted">Completed November 2022 – Virtual Classroom Live</small><br/>Built my foundational understanding of AWS cloud architecture, including IAM best practices, VPC networking, and designing scalable solutions.</p>
+      </div>
+    </div>
+  </div>
 
-<div class="cert-card">
-  <img src="/assets/images/training-certificates/Architecting on AWS - AWS Training & Certification - Certificate of Completion.png" alt="Architecting on AWS" width="100"/>
-  <p><strong><a href="https://www.aws.training/Transcript/CompletionCertificateHtml?transcriptid=DbH2DRTA7UmhJJGwz_OrTA2" target="_blank">Architecting on AWS</a></strong><br/>
-  Completed November 2022 – Virtual Classroom Live<br/>
-  Built my foundational understanding of AWS cloud architecture, including IAM best practices, VPC networking, and designing scalable solutions. This course helped prepare me for my Solutions Architect certification journey.</p>
-</div>
-
-<hr/>
-
-<div class="cert-card">
-  <img src="/assets/images/training-certificates/Advanced Architecting on AWS - AWS Training & Certification - Certificate of Completion.png" alt="Advanced Architecting on AWS" width="100"/>
-  <p><strong><a href="https://www.aws.training/Transcript/CompletionCertificateHtml?transcriptid=FFyML3OCKUaXQ4uQZbO8iQ2" target="_blank">Advanced Architecting on AWS</a></strong><br/>
-  Completed December 2023 – Virtual Classroom Live<br/>
-  Deepened my expertise in complex AWS architectures, focusing on hybrid cloud strategies, cost optimization techniques, and multi-account governance. This advanced training enhanced my ability to design enterprise-scale solutions.</p>
+  <div class="col-md-6 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <img src="/assets/images/training-certificates/Advanced Architecting on AWS - AWS Training & Certification - Certificate of Completion.png" alt="Advanced Architecting on AWS" class="card-img-top mb-3">
+        <h5 class="card-title"><a href="https://www.aws.training/Transcript/CompletionCertificateHtml?transcriptid=FFyML3OCKUaXQ4uQZbO8iQ2" target="_blank">Advanced Architecting on AWS</a></h5>
+        <p class="card-text"><small class="text-muted">Completed December 2023 – Virtual Classroom Live</small><br/>Deepened my expertise in complex AWS architectures, focusing on hybrid cloud strategies, cost optimization techniques, and multi-account governance.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 ---
