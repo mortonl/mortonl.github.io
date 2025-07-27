@@ -3,10 +3,10 @@
   <header class="profile-wrapper">
     <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
       {%- if site.avatar != empty and site.avatar -%}
-        {%- capture avatar_url -%}
-            {% include media-url.html src=site.avatar %}
-            {%- endcapture -%}
-        <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      {%- capture avatar_url -%}
+      {% include media-url.html src=site.avatar %}
+      {%- endcapture -%}
+      <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       {%- endif -%}
     </a>
 
@@ -30,44 +30,45 @@
 
       <!-- CV Collection -->
       {% if site.cv_pages %}
-        {% assign cv_homepage = site.cv_pages | where: "collection_homepage", true | first %}
-        {% if cv_homepage %}
-          <li class="nav-item">
-            <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#cv_pages-items">
-              <span><i class="fa-fw {{ cv_homepage.icon }}"></i> {{ cv_homepage.title | upcase }}</span>
-              <i class="fas fa-chevron-right"></i>
-            </button>
+      {% assign cv_homepage = site.cv_pages | where: "collection_homepage", true | first %}
+      {% if cv_homepage %}
+      <li class="nav-item">
+        <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#cv_pages-items">
+          <span><i class="fa-fw {{ cv_homepage.icon }}"></i> {{ cv_homepage.title | upcase }}</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </li>
+      <div class="collapse{% if page.collection == 'cv_pages' %} show{% endif %}" id="cv_pages-items">
+        <ul class="nav">
+          <li class="nav-divider"></li>
+          <li class="nav-item{% if cv_homepage.url == page.url %} active{% endif %}">
+            <a href="{{ cv_homepage.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ cv_homepage.icon }}"></i>
+              <span>{{ cv_homepage.title | upcase }}</span>
+            </a>
           </li>
-          <div class="collapse{% if page.collection == 'cv_pages' %} show{% endif %}" id="cv_pages-items">
-            <ul class="nav flex-column ms-3">
-              <li class="nav-item{% if cv_homepage.url == page.url %} active{% endif %}">
-                <a href="{{ cv_homepage.url | relative_url }}" class="nav-link">
-                  <i class="fa-fw {{ cv_homepage.icon }}"></i>
-                  <span>{{ cv_homepage.title | upcase }}</span>
-                </a>
-              </li>
-              {% for cv_page in site.cv_pages %}
-                {% unless cv_page.collection_homepage %}
-                  <li class="nav-item{% if cv_page.url == page.url %} active{% endif %}">
-                    <a href="{{ cv_page.url | relative_url }}" class="nav-link">
-                      <i class="fa-fw {{ cv_page.icon }}"></i>
-                      <span>{{ cv_page.title | upcase }}</span>
-                    </a>
-                  </li>
-                {% endunless %}
-              {% endfor %}
-            </ul>
-          </div>
-        {% else %}
           {% for cv_page in site.cv_pages %}
-            <li class="nav-item{% if cv_page.url == page.url %} active{% endif %}">
-              <a href="{{ cv_page.url | relative_url }}" class="nav-link">
-                <i class="fa-fw {{ cv_page.icon }}"></i>
-                <span>{{ cv_page.title | upcase }}</span>
-              </a>
-            </li>
+          {% unless cv_page.collection_homepage %}
+          <li class="nav-item{% if cv_page.url == page.url %} active{% endif %}">
+            <a href="{{ cv_page.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ cv_page.icon }}"></i>
+              <span>{{ cv_page.title | upcase }}</span>
+            </a>
+          </li>
+          {% endunless %}
           {% endfor %}
-        {% endif %}
+        </ul>
+      </div>
+      {% else %}
+      {% for cv_page in site.cv_pages %}
+      <li class="nav-item{% if cv_page.url == page.url %} active{% endif %}">
+        <a href="{{ cv_page.url | relative_url }}" class="nav-link">
+          <i class="fa-fw {{ cv_page.icon }}"></i>
+          <span>{{ cv_page.title | upcase }}</span>
+        </a>
+      </li>
+      {% endfor %}
+      {% endif %}
       {% endif %}
 
       <li class="nav-divider"></li>
@@ -75,12 +76,13 @@
       <!-- Blog Collection -->
       <li class="nav-item">
         <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#blog-items">
-          <span><i class="fa-fw fas fa-pen"></i> BLOG</span>
+          <span><i class="fa-fw fas fa-pen"></i>BLOG</span>
           <i class="fas fa-chevron-right"></i>
         </button>
       </li>
       <div class="collapse{% if page.collection == 'posts' or page.url == '/blog/' %} show{% endif %}" id="blog-items">
         <ul class="nav flex-column ms-3">
+          <li class="nav-divider"></li>
           <li class="nav-item{% if page.url == '/blog/' %} active{% endif %}">
             <a href="{{ site.paginate_path | replace: '/:num', '' | relative_url }}" class="nav-link">
               <i class="fa-fw fas fa-pen"></i>
@@ -88,16 +90,16 @@
             </a>
           </li>
           {% if site.blogs %}
-            {% for blog_page in site.blogs %}
-              {% unless blog_page.collection_homepage %}
-                <li class="nav-item{% if blog_page.url == page.url %} active{% endif %}">
-                  <a href="{{ blog_page.url | relative_url }}" class="nav-link">
-                    <i class="fa-fw {{ blog_page.icon }}"></i>
-                    <span>{{ blog_page.title | upcase }}</span>
-                  </a>
-                </li>
-              {% endunless %}
-            {% endfor %}
+          {% for blog_page in site.blogs %}
+          {% unless blog_page.collection_homepage %}
+          <li class="nav-item{% if blog_page.url == page.url %} active{% endif %}">
+            <a href="{{ blog_page.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ blog_page.icon }}"></i>
+              <span>{{ blog_page.title | upcase }}</span>
+            </a>
+          </li>
+          {% endunless %}
+          {% endfor %}
           {% endif %}
         </ul>
       </div>
@@ -106,103 +108,104 @@
 
       <!-- Hobbies Collection -->
       {% if site.hobbies %}
-        {% assign hobbies_tab = site.tabs | where: "title", "Hobbies & Interests" | first %}
-        {% if hobbies_tab %}
-          <li class="nav-item">
-            <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#hobbies-items">
-              <span><i class="fa-fw {{ hobbies_tab.icon }}"></i> {{ hobbies_tab.title | upcase }}</span>
-              <i class="fas fa-chevron-right"></i>
-            </button>
+      {% assign hobbies_tab = site.tabs | where: "title", "Hobbies & Interests" | first %}
+      {% if hobbies_tab %}
+      <li class="nav-item">
+        <button class="btn nav-link text-start d-flex justify-content-between align-items-center w-100" data-bs-toggle="collapse" data-bs-target="#hobbies-items">
+          <span><i class="fa-fw {{ hobbies_tab.icon }}"></i> {{ hobbies_tab.title | upcase }}</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </li>
+      <div class="collapse{% if page.collection == 'hobbies' or page.url == hobbies_tab.url %} show{% endif %}" id="hobbies-items">
+        <ul class="nav">
+          <li class="nav-divider"></li>
+          <li class="nav-item{% if page.url == hobbies_tab.url %} active{% endif %}">
+            <a href="{{ hobbies_tab.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ hobbies_tab.icon }}"></i>
+              <span>{{ hobbies_tab.title | upcase }}</span>
+            </a>
           </li>
-          <div class="collapse{% if page.collection == 'hobbies' or page.url == hobbies_tab.url %} show{% endif %}" id="hobbies-items">
-            <ul class="nav flex-column ms-3">
-              <li class="nav-item{% if page.url == hobbies_tab.url %} active{% endif %}">
-                <a href="{{ hobbies_tab.url | relative_url }}" class="nav-link">
-                  <i class="fa-fw {{ hobbies_tab.icon }}"></i>
-                  <span>{{ hobbies_tab.title | upcase }}</span>
-                </a>
-              </li>
-              {% for hobby_page in site.hobbies %}
-                {% unless hobby_page.collection_homepage %}
-                  <li class="nav-item{% if hobby_page.url == page.url %} active{% endif %}">
-                    <a href="{{ hobby_page.url | relative_url }}" class="nav-link">
-                      <i class="fa-fw {{ hobby_page.icon }}"></i>
-                      <span>{{ hobby_page.title | upcase }}</span>
-                    </a>
-                  </li>
-                {% endunless %}
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
+          {% for hobby_page in site.hobbies %}
+          {% unless hobby_page.collection_homepage %}
+          <li class="nav-item{% if hobby_page.url == page.url %} active{% endif %}">
+            <a href="{{ hobby_page.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ hobby_page.icon }}"></i>
+              <span>{{ hobby_page.title | upcase }}</span>
+            </a>
+          </li>
+          {% endunless %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
       {% endif %}
 
       <li class="nav-divider"></li>
 
       <!-- Other tabs -->
       {% for tab in site.tabs %}
-        {% unless tab.title == 'Hobbies & Interests' %}
-          <li class="nav-item{% if tab.url == page.url %} active{% endif %}">
-            <a href="{{ tab.url | relative_url }}" class="nav-link">
-              <i class="fa-fw {{ tab.icon }}"></i>
-              <span>{{ tab.title | upcase }}</span>
-            </a>
-          </li>
-        {% endunless %}
+      {% unless tab.title == 'Hobbies & Interests' %}
+      <li class="nav-item{% if tab.url == page.url %} active{% endif %}">
+        <a href="{{ tab.url | relative_url }}" class="nav-link">
+          <i class="fa-fw {{ tab.icon }}"></i>
+          <span>{{ tab.title | upcase }}</span>
+        </a>
+      </li>
+      {% endunless %}
       {% endfor %}
     </ul>
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     {% unless site.theme_mode %}
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
-        <i class="fas fa-adjust"></i>
-      </button>
+    <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+      <i class="fas fa-adjust"></i>
+    </button>
 
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border"></span>
-      {% endif %}
+    {% if site.data.contact.size > 0 %}
+    <span class="icon-border"></span>
+    {% endif %}
     {% endunless %}
 
     {% for entry in site.data.contact %}
-      {% case entry.type %}
-        {% when 'github', 'twitter' %}
-          {%- capture url -%}
-        https://{{ entry.type }}.com/{{ site[entry.type].username }}
-        {%- endcapture -%}
-        {% when 'email' %}
-          {% assign email = site.social.email | split: '@' %}
-          {%- capture url -%}
-        javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        {%- endcapture -%}
-        {% when 'rss' %}
-          {% assign url = '/feed.xml' | relative_url %}
-        {% else %}
-          {% assign url = entry.url %}
-      {% endcase %}
+    {% case entry.type %}
+    {% when 'github', 'twitter' %}
+    {%- capture url -%}
+    https://{{ entry.type }}.com/{{ site[entry.type].username }}
+    {%- endcapture -%}
+    {% when 'email' %}
+    {% assign email = site.social.email | split: '@' %}
+    {%- capture url -%}
+    javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+    {%- endcapture -%}
+    {% when 'rss' %}
+    {% assign url = '/feed.xml' | relative_url %}
+    {% else %}
+    {% assign url = entry.url %}
+    {% endcase %}
 
-      {% if url %}
-        <a
-          href="{{ url }}"
-          aria-label="{{ entry.type }}"
-          {% assign link_types = '' %}
+    {% if url %}
+    <a
+      href="{{ url }}"
+      aria-label="{{ entry.type }}"
+      {% assign link_types='' %}
 
-          {% unless entry.noblank %}
-            target="_blank"
-            {% assign link_types = 'noopener noreferrer' %}
-          {% endunless %}
+      {% unless entry.noblank %}
+      target="_blank"
+      {% assign link_types='noopener noreferrer' %}
+      {% endunless %}
 
-          {% if entry.type == 'mastodon' %}
-            {% assign link_types = link_types | append: ' me' | strip %}
-          {% endif %}
+      {% if entry.type== 'mastodon' %}
+    {% assign link_types = link_types | append: ' me' | strip %}
+    {% endif %}
 
-          {% unless link_types == empty %}
-            rel="{{ link_types }}"
-          {% endunless %}
-        >
-          <i class="{{ entry.icon }}"></i>
-        </a>
-      {% endif %}
+    {% unless link_types == empty %}
+    rel="{{ link_types }}"
+    {% endunless %}
+    >
+    <i class="{{ entry.icon }}"></i>
+    </a>
+    {% endif %}
     {% endfor %}
   </div>
   <!-- .sidebar-bottom -->

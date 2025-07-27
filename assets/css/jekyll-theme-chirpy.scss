@@ -86,6 +86,15 @@
   padding-right: 0.25rem; // Minimal right padding
 }
 
+.nav-item .nav-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#sidebar ul.nav ul.nav {
+  margin-bottom: 0;
+}
+
 /* Fix Bootstrap card backgrounds to match theme */
 .card {
   background-color: var(--card-bg);
